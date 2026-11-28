@@ -39,15 +39,21 @@
     .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#8edff0;text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:800;margin-bottom:16px}
     h1{font-family:Manrope,sans-serif;font-size:clamp(34px,4.5vw,54px);line-height:1.15;margin:0 auto 20px;max-width:800px;letter-spacing:-.035em}h1 span{color:#66d2e5}
     .hero p{font-size:18px;color:#d3dee8;max-width:680px;margin:0 auto 35px}
-    .portals{padding:80px 0;background:var(--paper)}
+    .portals{padding:64px 0 80px;background:var(--paper);scroll-margin-top:82px}
+    .portals-head{text-align:center;margin:0 auto 40px;max-width:640px}
+    .portals-head h2{font-family:Manrope,sans-serif;font-size:clamp(26px,3vw,34px);margin:0 0 10px;letter-spacing:-.02em}
+    .portals-head p{color:var(--muted);margin:0;font-size:16px}
     .portals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-    .portal-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:36px 30px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 10px 30px rgba(16,24,32,.04);transition:.25s;position:relative;overflow:hidden}
-    .portal-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(7,87,200,.12);border-color:rgba(7,87,200,.3)}
+    .portal-card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:18px;padding:32px 30px 30px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 10px 30px rgba(16,24,32,.06);transition:.25s;position:relative;overflow:hidden;cursor:pointer}
+    .portal-card:hover,.portal-card:focus-visible{transform:translateY(-6px);box-shadow:0 20px 40px rgba(7,87,200,.16);border-color:rgba(7,87,200,.45);border-top-color:var(--blue2);outline:none}
+    .portal-card .tag{position:absolute;top:22px;right:22px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--blue);background:#eaf3ff;border-radius:99px;padding:5px 11px}
     .portal-card .icon{width:56px;height:56px;border-radius:14px;background:#eaf3ff;display:grid;place-items:center;font-size:26px;color:var(--blue);margin-bottom:22px}
-    .portal-card h2{font-family:Manrope,sans-serif;font-size:22px;margin:0 0 12px;color:var(--ink)}
+    .portal-card h3{font-family:Manrope,sans-serif;font-size:22px;margin:0 0 12px;color:var(--ink)}
     .portal-card p{color:var(--muted);font-size:14px;margin:0 0 26px;line-height:1.6}
-    .portal-card .card-link{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--blue);font-size:15px;margin-top:auto}
-    .portal-card .card-link:hover{color:#0348a8}
+    .portal-card .card-link{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:14px 18px;border-radius:10px;background:var(--blue);color:#fff;font-weight:700;font-size:15px;margin-top:auto;transition:.2s}
+    .portal-card .card-link .arrow{font-size:18px;transition:transform .2s}
+    .portal-card:hover .card-link,.portal-card:focus-visible .card-link{background:#0348a8}
+    .portal-card:hover .card-link .arrow,.portal-card:focus-visible .card-link .arrow{transform:translateX(5px)}
     footer{background:#0c141b;color:#dce5ed;padding:48px 0 20px}.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}.footer-logo{width:190px;background:#fff;border-radius:8px;padding:7px;margin-bottom:15px}.footer p,.footer a{font-size:13px;color:#aebbc6}.footer h3{font-size:15px;margin-bottom:14px;color:#fff}.footer a{display:block;margin:8px 0}.copyright{border-top:1px solid #26323d;margin-top:35px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#83919d;font-size:11px}
     .whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:30;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#20bd69;color:white;font-size:25px;box-shadow:0 8px 25px rgba(0,0,0,.22)}
     @media(max-width:900px){.portals-grid{grid-template-columns:1fr;gap:20px}.footer-grid{grid-template-columns:1fr;gap:25px}}
@@ -68,40 +74,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="hero"><div class="container">
       <div class="eyebrow">Soluções Corporativas & Industriais</div>
       <h1>Precisão a laser para transformar ideias em <span>reconhecimento.</span></h1>
-      <p>Selecione abaixo a divisão de serviços que melhor atende à sua necessidade:</p>
+      <p>Atendemos três tipos de projeto. Escolha o seu abaixo e clique para abrir a página completa do serviço.</p>
+      <a class="btn hero-btn" href="#servicos">Ver os 3 serviços ↓</a>
     </div></section>
 
-    <section class="portals"><div class="container">
+    <section class="portals" id="servicos"><div class="container">
+      <div class="portals-head">
+        <h2>Qual serviço você procura?</h2>
+        <p>Cada serviço tem uma página própria com todos os detalhes. Clique no card para abrir.</p>
+      </div>
       <div class="portals-grid">
         <!-- PORTAL 1: TROFEU -->
-        <article class="portal-card">
+        <a class="portal-card" href="trofeu/">
+          <span class="tag">Ver página</span>
           <div>
             <div class="icon">🏆</div>
-            <h2>Troféus & Homenagens</h2>
+            <h3>Troféus & Homenagens</h3>
             <p>Troféus personalizados em acrílico, placas de homenagem comemorativas, medalhas e peças institucionais sob medida para celebrar conquistas e valorizar marcos.</p>
           </div>
-          <a class="card-link" href="trofeu/">Acessar Troféus e Placas →</a>
-        </article>
+          <span class="card-link">Ver Troféus e Placas <span class="arrow" aria-hidden="true">→</span></span>
+        </a>
 
         <!-- PORTAL 2: LOCACAO -->
-        <article class="portal-card">
+        <a class="portal-card" href="locacao/">
+          <span class="tag">Ver página</span>
           <div>
             <div class="icon">🎪</div>
-            <h2>Locação para Eventos</h2>
+            <h3>Locação para Eventos</h3>
             <p>Aluguel de máquinas de gravação a laser com equipe e operadores técnicos para estandes, festivais, feiras e ativações de live marketing com personalização ao vivo.</p>
           </div>
-          <a class="card-link" href="locacao/">Acessar Locação de Máquinas →</a>
-        </article>
+          <span class="card-link">Ver Locação de Máquinas <span class="arrow" aria-hidden="true">→</span></span>
+        </a>
 
         <!-- PORTAL 3: MARCACAO -->
-        <article class="portal-card">
+        <a class="portal-card" href="marcacao/">
+          <span class="tag">Ver página</span>
           <div>
             <div class="icon">⚙️</div>
-            <h2>Marcação a Laser B2B</h2>
+            <h3>Marcação a Laser B2B</h3>
             <p>Gravação industrial de alta precisão em metais, aço inox, ferramentas, plaquetas de identificação patrimonial e lotes seriados de brindes corporativos para empresas.</p>
           </div>
-          <a class="card-link" href="marcacao/">Acessar Marcação a Laser →</a>
-        </article>
+          <span class="card-link">Ver Marcação a Laser <span class="arrow" aria-hidden="true">→</span></span>
+        </a>
       </div>
     </div></section>
   </main>
